@@ -1,0 +1,33 @@
+Requirement codes: 
+update 06/10/2024
+- dữ liệu thô
+- dữ liệu traffic dạng pcap
+- dữ liệu dạng vollume traffic (bài báo nén gốc có sử dụng tập dữ liệu traffic - dạng volumne traffic)
+
+
+Methodology for measuring the delay of a neural network codec on a stand.
+
+1. There are two monitors. TV A and TV B. TV A is connected to Computer A. TV B is connected to Computer B.
+2. Computer A stores locally a video of the UAV flight on the territory of SPbSUT.
+3.1. The FPV-CTVP neural network codec encodes each frame and sends it to the satellite channel on Computer B. (!) WITHOUT INSCRIPTIONS (!)
+3.2. At the same time, the current time is added to each frame and displayed on TV A using cv2.imshow. The delay is considered insignificant.
+4. FPV-CTVP packets for a given frame are received on Computer B.
+5. Computer B uses the neural network codec to restore the frame.
+6. The current time is added to the frame. After which it is drawn on TV B using cv2.imshow.
+7. The external camera films both TVs and gets a delay.
+
+
+
+Update 04/10/2024.
+- phân tích lại các nội dung đang làm?
+- Mục tiêu của bài toán
+- Input tương ứng
+- Quá trình processing
+- Output sẽ thực hiện thế nào?
+
+Objectives: Bài toán làm giảm độ trễ
+Cần: 
+- Xác định input quan tâm (video hoặc volume traffic)
+- Tìm source cài đặt tương ứng (nên tìm github đi)
+- Chia nhỏ bài toán và implement tương ứng.
+
